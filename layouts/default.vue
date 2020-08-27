@@ -1,6 +1,29 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="layout-grid bg-blue-100 grid grid-cols-3 gap-1 h-screen sm:grid-cols-1 md:grid-cols-2">
+    <header class="bg-purple-100 col-span-3">
+      <!-- Header content -->
+      Head
+    </header>
+
+    <nav  class="bg-teal-100">
+      <!-- Navigation -->
+      Nav
+    </nav>
+
+    <main class="bg-pink-100">
+      <!-- Main content -->
+      <Nuxt />
+    </main>
+
+    <aside class="bg-orange-100">
+      <!-- Sidebar / Ads -->
+      Aside
+    </aside>
+
+    <footer class="bg-purple-300 col-span-3">
+      <!-- Footer content -->
+      Footer
+    </footer>
   </div>
 </template>
 
@@ -24,32 +47,8 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.layout-grid {
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 200px 1fr 200px;
 }
 </style>

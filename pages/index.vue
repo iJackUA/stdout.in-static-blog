@@ -1,10 +1,6 @@
 <template>
-  <div class="container">
+  <div class="">
     <div>
-      <Logo />
-      <h1 class="title">
-        stdout.in-nuxt
-      </h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
