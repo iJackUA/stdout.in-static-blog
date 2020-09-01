@@ -1,30 +1,26 @@
 <template>
-  <div class="">
-    <div>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div>
+    <div
+      v-for="post in posts"
+      :key="post.path"
+    >
+      <NuxtLink :to="{ name: 'blog-slug', params: { slug: post.slug } }">
+        {{ post.title }}
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData ({ $content }) {
+    const posts = await $content('posts').limit(20).sortBy('date', 'desc').fetch()
+
+    return {
+      posts
+    }
+  }
+}
 </script>
 
 <style>

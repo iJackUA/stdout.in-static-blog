@@ -2,13 +2,20 @@
   <div class="layout-grid bg-blue-100 grid grid-cols-3 gap-1 h-screen sm:grid-cols-1 md:grid-cols-2">
     <header class="bg-purple-100 col-span-3">
       <!-- Header content -->
-      Head
+      <nuxt-link to="/blog">
+        Blog
+      </nuxt-link>
+      <nuxt-link to="/talks">
+        Talks
+      </nuxt-link>
+      <nuxt-link to="/projects">
+        Projects
+      </nuxt-link>
     </header>
 
-    <nav  class="bg-teal-100">
-      <!-- Navigation -->
-      Nav
-    </nav>
+    <aside  class="bg-teal-100">
+      <!-- Left side -->
+    </aside>
 
     <main class="bg-pink-100">
       <!-- Main content -->
@@ -16,8 +23,7 @@
     </main>
 
     <aside class="bg-orange-100">
-      <!-- Sidebar / Ads -->
-      Aside
+      <!-- Right side -->
     </aside>
 
     <footer class="bg-purple-300 col-span-3">
@@ -49,6 +55,6 @@ html {
 
 .layout-grid {
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 1fr 600px 1fr;
 }
 </style>
