@@ -5,7 +5,14 @@
       :key="post.path"
     >
       <NuxtLink :to="{ name: 'blog-slug', params: { slug: post.slug } }">
-        <h1 class="text-xl">{{ post.title }}</h1>
+        <h1 class="text-xl">
+          {{ post.title }}
+        </h1>
+        <h3>
+          {{ post.readingTime.text }}
+        </h3>
+        <!-- // eslint-disable-next-line -->
+        <div class="px-5 py-5 bg-green-200 prose" v-html="post.excerpt" />
       </NuxtLink>
     </div>
   </div>

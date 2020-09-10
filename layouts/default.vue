@@ -2,7 +2,7 @@
   <div class="layout-grid bg-blue-100 grid grid-cols-3 gap-1 h-screen sm:grid-cols-1 md:grid-cols-2">
     <header class="bg-purple-100 col-span-3">
       <!-- Header content -->
-      <nuxt-link to="/blog">
+      <nuxt-link to="/">
         Blog
       </nuxt-link>
       <nuxt-link to="/talks">
@@ -13,7 +13,7 @@
       </nuxt-link>
     </header>
 
-    <aside  class="bg-teal-100">
+    <aside class="bg-teal-100">
       <!-- Left side -->
     </aside>
 

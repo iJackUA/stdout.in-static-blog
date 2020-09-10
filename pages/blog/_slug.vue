@@ -1,23 +1,27 @@
 <template>
   <div>
     <article class="prose">
-      <h1>{{ post.title }}</h1>
+      <h1>
+        {{ post.title }}
+      </h1>
       <nuxt-content :document="post" />
     </article>
 
     <div>
-      <NuxtLink
+      <!-- <NuxtLink
         v-if="prev"
         class="rounded-sm bg-teal-500 px-4 py-4 hover:bg-teal-900"
-        :to="{ name: 'blog-slug', params: { slug: prev.slug } }">
+        :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
+      >
         {{ prev.title }}
-      </NuxtLink>
+      </NuxtLink> -->
 
       <NuxtLink
         v-if="next"
         class="rounded-sm bg-pink-500 px-4 py-4 hover:bg-pink-900"
-        :to="{ name: 'blog-slug', params: { slug: next.slug } }">
-        {{ next.title }}
+        :to="{ name: 'blog-slug', params: { slug: next.slug } }"
+      >
+        Read next: {{ next.title }}
       </NuxtLink>
     </div>
   </div>

@@ -1,3 +1,7 @@
+import remark from 'remark'
+import remarkExcerpt from 'remark-excerpt'
+import remarkHtml from 'remark-html'
+import readingTime from 'reading-time'
 
 export default {
   /*
@@ -60,6 +64,20 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content'
   ],
+  hooks: {
+    'content:file:beforeInsert': async (document) => {
+      if (document.extension === '.md') {
+        const processed = await remark()
+          .use(remarkExcerpt)
+          .use(remarkHtml)
+          .process(document.text)
+        document.excerpt = processed.contents
+
+        const time = readingTime(document.text)
+        document.readingTime = time
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
