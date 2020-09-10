@@ -55,6 +55,6 @@ html {
 
 .layout-grid {
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr 600px 1fr;
+  grid-template-columns: 1fr 800px 1fr;
 }
 </style>

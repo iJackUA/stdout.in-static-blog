@@ -1,5 +1,6 @@
 # stdout.in-nuxt
 
+
 ## Build Setup
 
 ```bash
