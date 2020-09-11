@@ -1,7 +1,7 @@
 <template>
   <div>
-    <article class="prose">
-      <h1>
+    <article class="prose max-w-none">
+      <h1 class="text-center">
         {{ post.title }}
       </h1>
       <h3>

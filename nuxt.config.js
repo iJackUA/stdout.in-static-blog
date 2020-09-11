@@ -88,10 +88,28 @@ export default {
   ** See https://content.nuxtjs.org/configuration
   */
   content: {},
+  /**
+   * Generate custome routes
+   * seed with []
+   */
+  // generate: {
+  //   routes: []
+  // },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    // extend(config, context) {
+    //   if (context.isServer) {
+    //     axios.get('https://api.thedogapi.com/v1/images/search?limit=20&order=Desc')
+    //       .then(({ data }) => {
+    //         // in a minute
+    //       })
+    //       .catch((error) => {
+    //         // oh no
+    //       });
+    //   }
+    // }
   }
 }

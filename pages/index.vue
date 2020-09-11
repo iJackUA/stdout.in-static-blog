@@ -11,6 +11,17 @@
         <h3>
           {{ post.readingTime.text }}
         </h3>
+        <ul>
+          <li
+            v-for="tag in post.tags"
+            :key="tag"
+            class="rounded-lg bg-purple-300 inline-block px-3"
+          >
+            <NuxtLink :to="{ name: 'blog-tag-tag', params: { tag: tag }}">
+              {{ tag }}
+            </NuxtLink>
+          </li>
+        </ul>
         <!-- // eslint-disable-next-line -->
         <div class="px-5 py-5 bg-green-200 prose" v-html="post.excerpt" />
       </NuxtLink>
