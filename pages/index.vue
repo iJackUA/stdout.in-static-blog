@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div
       v-for="post in posts"
       :key="post.path"
@@ -23,10 +23,10 @@
           </li>
         </ul>
         <!-- // eslint-disable-next-line -->
-        <div class="px-5 py-5 bg-green-200 prose" v-html="post.excerpt" />
+        <div class="px-5 py-5 bg-green-200 prose max-w-none" v-html="post.excerpt" />
       </NuxtLink>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
