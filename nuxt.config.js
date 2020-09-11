@@ -8,7 +8,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -33,6 +33,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -111,5 +112,14 @@ export default {
     //       });
     //   }
     // }
+  },
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'blog-page-page',
+        path: '/blog/page/:page',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
+    }
   }
 }

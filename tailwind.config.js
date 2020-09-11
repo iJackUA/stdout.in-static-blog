@@ -6,7 +6,7 @@
 */
 module.exports = {
   future: {
-    removeDeprecatedGapUtilities: true,
+    removeDeprecatedGapUtilities: true
   },
   theme: {},
   variants: {},

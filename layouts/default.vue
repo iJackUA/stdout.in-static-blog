@@ -1,6 +1,6 @@
 <template>
   <div class="layout-grid bg-blue-100 grid grid-cols-3 gap-1 h-screen sm:grid-cols-1 md:grid-cols-2">
-    <header class="bg-purple-100 col-span-3">
+    <header class="bg-purple-100 col-span-3 text-center">
       <!-- Header content -->
       <nuxt-link to="/">
         Blog
@@ -33,7 +33,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -56,5 +56,11 @@ html {
 .layout-grid {
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr 800px 1fr;
+}
+
+header {
+  a {
+    @apply font-bold text-xl px-10
+  }
 }
 </style>

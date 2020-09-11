@@ -1,5 +1,20 @@
 <template>
   <main>
+    <ul>
+      <li
+        v-for="page in pagination.total"
+        :key="page"
+        class="inline-block px-1"
+      >
+        <NuxtLink
+          :to="{ name: 'blog-page-page', params: { page }}"
+          class="rounded-lg bg-orange-300 px-2"
+        >
+          {{ page }}
+        </NuxtLink>
+      </li>
+    </ul>
+
     <div
       v-for="post in posts"
       :key="post.path"
@@ -23,7 +38,7 @@
           </li>
         </ul>
         <!-- // eslint-disable-next-line -->
-        <div class="px-5 py-5 bg-green-200 prose max-w-none" v-html="post.excerpt" />
+        <!-- <div class="px-5 py-5 bg-green-200 prose max-w-none" v-html="post.excerpt" /> -->
       </NuxtLink>
     </div>
   </main>
@@ -31,11 +46,23 @@
 
 <script>
 export default {
-  async asyncData ({ $content }) {
-    const posts = await $content('posts').limit(5).sortBy('date', 'desc').fetch()
+  async asyncData ({ $content, params }) {
+    const perPage = 10
+    const page = params.page || 1
+    const postsForPagination = await $content('posts').only('title').fetch()
+    const total = Math.round(postsForPagination.length / perPage)
+    const pagination = {
+      page,
+      perPage,
+      total
+    }
+
+    const skip = page ? page * perPage : 0
+    const posts = await $content('posts').skip(skip).limit(5).sortBy('date', 'desc').fetch()
 
     return {
-      posts
+      posts,
+      pagination
     }
   }
 }
