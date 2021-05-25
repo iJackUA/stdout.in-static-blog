@@ -5,8 +5,18 @@
         {{ post.title }}
       </h1>
       <h3>
-        {{ post.readingTime.text }}
+        {{ post.readingTime.text }} | {{ dateFormatted }}
       </h3>
+
+      <nav>
+        <ul>
+          <li v-for="link of post.toc" :key="link.id">
+            <NuxtLink :to="`#${link.id}`">
+              {{ link.text }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </nav>
 
       <nuxt-content :document="post" />
     </article>
@@ -32,8 +42,11 @@
 </template>
 
 <script>
+import { format } from 'date-fns'
+import { enUS } from 'date-fns/locale'
+
 export default {
-  async asyncData ({ $content, params }) {
+  async asyncData ({ $content, params, $dateFns }) {
     const post = await $content('posts', params.slug).fetch()
 
     const [prev, next] = await $content('posts')
@@ -42,7 +55,9 @@ export default {
       .surround(params.slug)
       .fetch()
 
-    return { post, prev, next }
+    const dateFormatted = format(new Date(post.createdAt), 'MMMM/dd/yyyy', { locale: enUS })
+
+    return { post, prev, next, dateFormatted }
   }
 }
 </script>

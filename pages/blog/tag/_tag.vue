@@ -1,19 +1,18 @@
 <template>
   <div>
-    Post for tag: {{  }}
+    Post for tag: {{ tag }}
     <div
       v-for="post in posts"
       :key="post.path"
     >
-      <NuxtLink :to="{ name: 'blog-slug', params: { slug: post.slug } }">
+      <NuxtLink :to="{ name: 'blog-slug', params: { slug: post.slug }}">
         <h1 class="text-xl">
           {{ post.title }}
         </h1>
         <h3>
           {{ post.readingTime.text }}
         </h3>
-        <!-- // eslint-disable-next-line -->
-        <div class="px-5 py-5 bg-green-200 prose" v-html="post.excerpt" />
+        <nuxt-content :document="{body: post.excerpt}" class="px-5 py-5 bg-green-200 prose" />
       </NuxtLink>
     </div>
   </div>
@@ -28,8 +27,11 @@ export default {
       .sortBy('date', 'desc')
       .fetch()
 
+    const tag = params.tag
+
     return {
-      posts
+      posts,
+      tag
     }
   }
 }

@@ -19,3 +19,9 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+# TODO
+
+- Update Tailwind
+- Meta content for Pages
+- RSS feed https://www.npmjs.com/package/@nuxtjs/feed

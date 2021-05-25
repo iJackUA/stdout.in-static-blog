@@ -1105,7 +1105,7 @@
     std-env "^2.3.0"
     ufo "^0.7.4"
 
-"@nuxt/content@^1.8.0":
+"@nuxt/content@^1.14.0":
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.14.0.tgz#5775b596d2db1ae65c41d461c0a6734fc276cb82"
   integrity sha512-MYx+dTu2ZRUHWGp9EgVtFfXJHFeCKrzazaM4a9785OCipItp6zmm1hTlbfdCYenwa0HgaOXCxYAiN0h6tjyUZw==
@@ -1405,7 +1405,7 @@
     webpack-node-externals "^3.0.0"
     webpackbar "^4.0.0"
 
-"@nuxtjs/axios@^5.12.0":
+"@nuxtjs/axios@^5.13.0":
   version "5.13.4"
   resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.13.4.tgz#32ef656b7fdec1e53acdfdff6fb1844a1698af1e"
   integrity sha512-RLDctJLm2erJhwKnnmII6vDmH4BLZ6mca/ndFJyamPlB9uzIVNyat2Dw+FYlJSJIDI1Mfp3NntipUiSGUqrXiw==
@@ -4023,6 +4023,11 @@ dagre@^0.8.4, dagre@^0.8.5:
   dependencies:
     graphlib "^2.1.8"
     lodash "^4.17.15"
+
+date-fns@^2.21.3:
+  version "2.21.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.3.tgz#8f5f6889d7a96bbcc1f0ea50239b397a83357f9b"
+  integrity sha512-HeYdzCaFflc1i4tGbj7JKMjM4cKGYoyxwcIIkHzNgCkX8xXDNJDZXgDDVchIWpN4eQc3lH37WarduXFZJOtxfw==
 
 de-indent@^1.0.2:
   version "1.0.2"
