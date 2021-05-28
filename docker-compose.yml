@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  database:
+    container_name: database
+    image: postgres:12-alpine
+    ports:
+      - 5434:5432
+    env_file: .env
+    volumes:
+      - .:/web:cached
+      - db-data:/var/lib/postgresql/data:cached
+
+volumes:
+  db-data: null
+
