@@ -22,14 +22,6 @@
     </article>
 
     <div>
-      <!-- <NuxtLink
-        v-if="prev"
-        class="rounded-sm bg-teal-500 px-4 py-4 hover:bg-teal-900"
-        :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
-      >
-        {{ prev.title }}
-      </NuxtLink> -->
-
       <NuxtLink
         v-if="next"
         class="rounded-sm bg-pink-500 px-4 py-4 hover:bg-pink-900"

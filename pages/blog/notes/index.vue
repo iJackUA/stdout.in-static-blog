@@ -16,23 +16,19 @@
     </ul>
 
     <div
-      v-for="post in posts"
-      :key="post.path"
+      v-for="note in notes"
+      :key="note.path"
     >
-      <NuxtLink :to="{ name: 'blog-slug', params: { slug: post.slug } }">
+      <NuxtLink :to="{ name: 'blog-notes-id', params: { id: note.path } }">
         <h1 class="text-xl">
-          {{ post.title }} {{ post.date }}
+          {{ note.date }}
         </h1>
-        <h3>
-          {{ post.readingTime.text }}
-        </h3>
-        <nuxt-content v-if="post.excerpt" :document="{body: post.excerpt}" class="px-5 py-5 bg-green-200 prose" />
-        <nuxt-content v-else :document="post" class="px-5 py-5 bg-green-200 prose" />
+        <nuxt-content :document="note" class="px-5 py-5 bg-green-200 prose" />
       </NuxtLink>
 
       <ul class="tags">
         <li
-          v-for="tag in post.tags"
+          v-for="tag in note.tags"
           :key="tag"
           class="rounded-lg bg-purple-300 inline-block px-3"
         >
@@ -50,8 +46,8 @@ export default {
   async asyncData ({ $content, params }) {
     const perPage = 10
     const page = params.page || 1
-    const postsForPagination = await $content('posts/en').only('title').fetch()
-    const total = Math.round(postsForPagination.length / perPage)
+    const notesForPagination = await $content('notes').fetch()
+    const total = Math.round(notesForPagination.length / perPage)
     const pagination = {
       page,
       perPage,
@@ -59,10 +55,10 @@ export default {
     }
 
     const skip = page ? page * perPage : 0
-    const posts = await $content('posts/en').skip(skip).limit(5).sortBy('date', 'desc').fetch()
+    const notes = await $content('notes').skip(skip).limit(5).sortBy('date', 'desc').fetch()
 
     return {
-      posts,
+      notes,
       pagination
     }
   }
@@ -70,11 +66,6 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;

@@ -3,13 +3,19 @@
     <header class="bg-purple-100 col-span-3 text-center">
       <!-- Header content -->
       <nuxt-link to="/">
-        Blog
+        Posts
+      </nuxt-link>
+      <nuxt-link to="/blog/notes">
+        Notes
       </nuxt-link>
       <nuxt-link to="/talks">
         Talks
       </nuxt-link>
       <nuxt-link to="/projects">
         Projects
+      </nuxt-link>
+      <nuxt-link to="/eugene">
+        About Me
       </nuxt-link>
     </header>
 

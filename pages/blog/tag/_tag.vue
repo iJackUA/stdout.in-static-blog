@@ -21,7 +21,7 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    const posts = await $content('posts')
+    const posts = await $content('posts/en')
       .where({ tags: { $contains: params.tag } })
       .limit(5)
       .sortBy('date', 'desc')
