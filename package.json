@@ -16,7 +16,7 @@
     "@nuxtjs/pwa": "^3.0.0",
     "@tailwindcss/typography": "^0.4.0",
     "date-fns": "^2.21.3",
-    "mermaid": "^8.8.0",
+    "mermaid": "^9.1.2",
     "nuxt": "^2.14.0",
     "reading-time": "^1.2.0",
     "remark": "^13.0.0",
